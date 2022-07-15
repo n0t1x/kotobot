@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from telegram import ReplyKeyboardMarkup
 from telegram.ext import Updater, Filters, MessageHandler, CommandHandler
 
+
 load_dotenv()
 
 updater = Updater(token=os.getenv('TOKEN'))
@@ -31,7 +32,7 @@ def new_cat(update, context):
 def wake_up(update, context):
     chat = update.effective_chat
     name = update.message.chat.first_name
-    button = ReplyKeyboardMarkup([['Увидеть кота!']], resize_keyboard=True)
+    button = ReplyKeyboardMarkup([['/newcat']], resize_keyboard=True)
 
     context.bot.send_message(
         chat_id=chat.id,
