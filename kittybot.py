@@ -4,7 +4,10 @@ import os
 from dotenv import load_dotenv
 from telegram import ReplyKeyboardMarkup
 from telegram.ext import Updater, Filters, MessageHandler, CommandHandler
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 load_dotenv()
 
